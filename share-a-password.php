@@ -91,7 +91,6 @@ function sap_short() {
 	elseif (isset($_GET['q']))
 	{
 	include('includes/sap-call.php');
-	return include('includes/sap-form.php');
 	}
 	else
 	{
