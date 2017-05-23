@@ -55,7 +55,7 @@ function sap_setup()
 	function sap_cleanup() {
 		global $wpdb;
 		$table_name = $wpdb->prefix . "shareapassword";
-		$wpdb->query("DELETE FROM $table_name WHERE creation_time >= now() - INTERVAL 1 DAY");
+		$wpdb->query("DELETE FROM $table_name WHERE creation_time < DATE_SUB(NOW(), INTERVAL 24 HOUR)");
 	}
 
 
