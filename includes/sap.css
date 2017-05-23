@@ -6,10 +6,13 @@
 	width:80%
 }
 
+.sapSubmit	{
+	margin-top: 5px;
+}
+
 .secret	{
 	font-size: 32px;
 	font-weight:bold;
-
 }
 
 .sap_count	{
