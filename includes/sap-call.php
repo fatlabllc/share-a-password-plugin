@@ -25,6 +25,8 @@
 	$decrypt = decrypt($info3,$info2);
 	// add to the view count
 	$wpdb->update( $table_name, array( 'views' => $viewCountNew ), array( 'info1' => $urlVar ) );
+	// output CSS
+	echo '<link rel="stylesheet" id="sap-css"  href="http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css" />';
 	// display the password
 	echo '<p><strong>Here is the information you seek:</strong></p><p class="secret">' . nl2br($decrypt) . '</p><p class="sap_count">This secret has been viewed '.$viewCountNew.' times</p>';
 ?>
