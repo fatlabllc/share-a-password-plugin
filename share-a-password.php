@@ -87,7 +87,6 @@ function sap_short() {
 	if(isset($_POST['sapInput']))
 	{
 	include('includes/sap-process.php');
-	return include('includes/sap-form.php');
 	}
 	elseif (isset($_GET['q']))
 	{
