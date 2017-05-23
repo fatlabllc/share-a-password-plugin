@@ -48,5 +48,5 @@
 	} else {
 	    $urlVar='http://'.$_SERVER['HTTP_HOST'].$pageVar.'?q='.$urlcode;
 	}
-	echo "<p>Your Temporary URL is...<br/><br/><strong>" . $urlVar . "</strong></p><p>Simply copy this URL and send. The link is good for 24 hours.<br/><br/>"
+	echo "<p>Your Temporary URL is:</p><strong>" . $urlVar . "</strong></p><p>Simply copy this URL and send. The link is good for 24 hours. After 24 hours all data and the link will be permanently deleted from the system.</p>"
 ?>
