@@ -17,15 +17,6 @@
 	    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
 	    return trim(base64_encode(mcrypt_encrypt(MCRYPT_BLOWFISH, $salt, $text, MCRYPT_MODE_ECB, $iv)));
 	}
-	//decrypt function
-	function decrypt($text,$salt) {
-	    $args = func_get_args();
-	    $text= $args[0];
-	    $salt = $args[1];
-	    $iv_size = mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
-	    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-	    return trim(mcrypt_decrypt(MCRYPT_BLOWFISH, $salt, base64_decode($text), MCRYPT_MODE_ECB, $iv));
-	}
 
 	//get our form variable: unencrypted data provided by user
 	$userEntry = $_POST["sapInput"];
