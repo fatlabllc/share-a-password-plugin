@@ -1,0 +1,17 @@
+#sapFormDiv	{
+	margin:25px 0 25px 0;
+}
+
+#sapFormDiv .sapInput	{
+	width:80%
+}
+
+.secret	{
+	font-size: 32px;
+	font-weight:bold;
+
+}
+
+.sap_count	{
+	margin-bottom: 100px;
+}
