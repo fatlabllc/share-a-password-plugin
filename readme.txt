@@ -11,7 +11,7 @@ Securely (as possible) share a password via temporary URL. Passwords are stored 
 
 == Description ==
 
-Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl. Each entry is encrypted with its own unique key using open-ssl.
+Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl.
 
 Warranty: There is none. Just like any other software you install, you are responsible for how it is used. This is a security focused plugin though we don't make any warranty or claim to how 'secure' it is. Use with caution and be smart, don't use it to store credit card information, social security numbers etc. The idea here was simply that it would be more secure then sending a password by email. That's it, the rest is up to you.
 
@@ -19,12 +19,13 @@ Share a Password was developed by FatLab, LLC (https://www.fatlabwebsupport.com/
 
 == Installation ==
 
-Upload the Share a Password plugin to your website by using the administrative area to upload the zip file or by FTP'ing the share-a-password to your /wp-content/plugins directory.  Activate it.
+Upload the Share a Password plugin to your website by using the administrative area to upload the zip file or by FTP'ing the share-a-password to your /wp-content/plugins directory.  Activate it. Place the shortcode: [share-a-password] with any page you want the form to appear in. The same page will be used to generate the form, display the temporary URL and display the decrypted information to the end user.
 
  == Screenshots ==
-1. /assets/screenshot-1.png
-2. /assets/screenshot-2.png
-3. /assets/screenshot-3.png
+1. /assets/sap-admin.png
+2. /assets/sap-form.png
+3. /assets/sap-url.png
+4. /assets/sap-result.png
 
 == Changelog ==
 
