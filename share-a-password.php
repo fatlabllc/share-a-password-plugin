@@ -71,7 +71,7 @@ function sap_setup()
 
 	// create an admin menu item under Settings
 	function sap_admin_actions() {
-		add_options_page("Share a Password", "Share a Password", 1, "shareapassword", "sap_admin");
+		add_submenu_page("tools.php","Share a Password", "Share a Password", 1, "shareapassword", "sap_admin");
 	}
 	add_action('admin_menu', 'sap_admin_actions');
 
