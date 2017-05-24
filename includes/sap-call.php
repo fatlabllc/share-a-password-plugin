@@ -2,13 +2,12 @@
 	$urlVar = $_GET['q'];
 
 	//decrypt function
-	function decrypt($text,$salt) {
-	    $args = func_get_args();
-	    $text= $args[0];
-	    $salt = $args[1];
-	    $iv_size = mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
-	    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-	    return trim(mcrypt_decrypt(MCRYPT_BLOWFISH, $salt, base64_decode($text), MCRYPT_MODE_ECB, $iv));
+	function decrypt($text,$key) {
+	    // Remove the base64 encoding from our key
+	    $encryption_key = base64_decode($key);
+	    // To decrypt, split the encrypted data from our IV - our unique separator used was "::"
+	    list($encrypted_data, $iv) = explode('::', base64_decode($text), 2);
+	    return openssl_decrypt($encrypted_data, 'aes-256-cbc', $encryption_key, 0, $iv);
 	}
 
 	//call information back from database

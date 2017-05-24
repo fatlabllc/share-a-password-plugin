@@ -9,27 +9,29 @@
 	  );
 	}
 	//encrypt function
-	function encrypt($text,$salt) {
-		$args = func_get_args();
-		$text= $args[0];
-	    $salt = $args[1];
-	    $iv_size = mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_ECB);
-	    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-	    return trim(base64_encode(mcrypt_encrypt(MCRYPT_BLOWFISH, $salt, $text, MCRYPT_MODE_ECB, $iv)));
+
+	function encrypt($text,$key) {
+	    // Remove the base64 encoding from our key
+	    $encryption_key = base64_decode($key);
+	    // Generate an initialization vector
+	    $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+	    // Encrypt the data using AES 256 encryption in CBC mode using our encryption key and initialization vector.
+	    $encrypted = openssl_encrypt($text, 'aes-256-cbc', $encryption_key, 0, $iv);
+	    return base64_encode($encrypted . '::' . $iv);
 	}
 
 	//get our form variable: unencrypted data provided by user
 	$userEntry = $_POST["sapInput"];
 	//create unique salt
-	$salt = generatString(30);
+	$key = generatString(32);
 	//create url code
 	$urlcode = generatString(17);
-	//encrypt that sucker, with just a pinch of salt
-	$encrypt = encrypt($userEntry,$salt);
+	//encrypt that sucker
+	$encrypt = encrypt($userEntry,$key);
 	//put this in the database
 	global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";
-	$wpdb->insert( $table_name, array( 'info2' => $salt, 'info3' => $encrypt, 'info1' => $urlcode),
+	$wpdb->insert( $table_name, array( 'info2' => $key, 'info3' => $encrypt, 'info1' => $urlcode),
 	array ('%s','%s','%s')
 	);
 	// figure out the page's URL
