@@ -1,24 +1,60 @@
-Share a Password
-http://www.fatlabwebsupport.com/
+=== Share a Password ===
+Contributors: fatlabllc
+Donate link: N/A
+Tags: passwords, security
+Requires at least: 3.8.1
+Tested up to: 4.7.5
+Stable tag: 0.4
+License: GPLv2 or later
 
-Securly (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. The concept is that you will send the intended recpient thier username and other info by other means and then the password via this tool. Keeping full access information out of insecure formats such as email.
+Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours.
 
-License: GPL2
+== Description ==
 
-Current Version: 0.2 BETA
+Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl. Each entry is encrypted with its own unique key using open-ssl.
 
-v.03 BETA
-Fixed issue with cron job not deleting records over 24 hours old
-fixed bug in schedule/cron job to delete older records
-Set form field limit to 900 characters (that shoudl be enough)
+Warranty: There is none. Just like any other software you install, you are responsible for how it is used. This is a security focused plugin though we don't make any warranty or claim to how 'secure' it is. Use with caution and be smart, don't use it to store credit card information, social security numbers etc. The idea here was simply that it would be more secure then sending a password by email. That's it, the rest is up to you.
 
-v.02 BETA
-Added plugin version number to options table (remove on deletion)
-Added view count to display of password
-Added views column to database table
-Added incrementing integer upon view or url
-Changed database field for encrypted password to varchar(255)
-Set form field limit to 150 characters
+Share a Password was developed by FatLab, LLC (https://www.fatlabwebsupport.com/) and is maintained at GitHub (https://github.com/fatlabllc/fatlab-share-a-password-plugin). It's open source. If you can make it better or find a bug to squash, please do!
 
-v.01 BETA
-It was what it was... you gotta start somewhere, huh?
+== Installation ==
+
+Upload the Share a Password plugin to your website by using the administrative area to upload the zip file or by FTP'ing the share-a-password to your /wp-content/plugins directory.  Activate it.
+
+ == Screenshots ==
+1. /assets/screenshot-1.png
+2. /assets/screenshot-2.png
+3. /assets/screenshot-3.png
+
+== Changelog ==
+
+Current Version: 0.4 BETA
+
+= 0.4 BETA =
+* BIG Change: Moved encryption from outdated mcrypt to open-ssl - thanks to https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
+* Encryption change fixed issues with large encrypted data appearing blank on output
+* Created simple admin screen under tools
+* Cleaned up front-end interface
+* Changed database field for encrypted password to varchar(5000)
+
+= 0.3 BETA =
+* Fixed issue with cron job not deleting records over 24 hours old
+* fixed bug in schedule/cron job to delete older records
+* Set form field limit to 900 characters (that should be enough)
+
+= 0.2 BETA =
+* Added plugin version number to options table (remove on deletion)
+* Added view count to display of password
+* Added views column to database table
+* Added incrementing integer upon view or url
+* Changed database field for encrypted password to varchar(255)
+* Set form field limit to 150 characters
+
+= 0.1 BETA =
+* It was what it was... you gotta start somewhere, huh?
+
+== Upgrade Notice ==
+= 0.4 =
+* Changed encryption from outdated mcrypt to open-ssl
+* Interface improvements
+* Introduced simple admin screen under Tools
