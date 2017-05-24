@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	//call information back from database
 	global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";

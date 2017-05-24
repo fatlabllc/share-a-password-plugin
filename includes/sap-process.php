@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	// generate a random string function
 	// this is called twice, once to generate the url and once to provide a unique salt
     function generatString($stringLength)

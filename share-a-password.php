@@ -9,6 +9,8 @@ Author URI: http://www.fatlabwebsupport.com
 License: GPL2
 */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 
 
 //====================
