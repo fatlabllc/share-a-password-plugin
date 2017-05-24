@@ -2,11 +2,11 @@
 /*
 Plugin Name: Share a Password
 Plugin URI: http://www.fatlabwebsupport.com/
-Description: Securly (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. The concept is that you will send the intended recpient thier username and other info by other means and then the password via this tool. Keeping full access information out of insecure formats such as email.
-Version: 0.3 BETA
-Author: FatLab Web Support
+Description: Securly (as possible) share a password or other secret via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Add your secret and share the temporary URL with the recipient.
+Version: 0.4 BETA
+Author: FatLab, LLC
 Author URI: http://www.fatlabwebsupport.com
-License: GPL2
+License: License: GPLv2 or later
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
