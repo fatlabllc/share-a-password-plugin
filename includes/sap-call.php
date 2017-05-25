@@ -1,6 +1,14 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 	$urlVar = $_GET['q'];
+
+	// figure out the css path
+	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") {
+		$css='https://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
+	} else {
+	    $css='http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
+	}
 
 	//decrypt function
 	function decrypt($text,$key) {
@@ -26,7 +34,7 @@
 	// add to the view count
 	$wpdb->update( $table_name, array( 'views' => $viewCountNew ), array( 'info1' => $urlVar ) );
 	// output CSS
-	echo '<link rel="stylesheet" id="sap-css"  href="http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css" />';
+	echo '<link rel="stylesheet" id="sap-css"  href="'.$css.'" />';
 	// display the password
 	echo '<p><strong>Here is the information you seek:</strong></p><p class="secret">' . nl2br($decrypt) . '</p><p class="sap_count">This secret has been viewed '.$viewCountNew.' times</p>';
 ?>
