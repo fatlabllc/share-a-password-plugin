@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function sap_setup()
 {
 	// store plugin version in wp_options table
-	add_option( 'sap_version', '0.4', '', 'no' );
+	add_option( 'sap_version', '1', '', 'no' );
 	// create our main table
     global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";
