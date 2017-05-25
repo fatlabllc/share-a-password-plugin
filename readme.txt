@@ -4,18 +4,18 @@ Donate link: N/A
 Tags: passwords, security
 Requires at least: 3.8.1
 Tested up to: 4.7.5
-Stable tag: 0.4
+Stable tag: 1
 License: GPLv2 or later
 
 Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours.
 
 == Description ==
 
-Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl.
-
-Warranty: There is none. Just like any other software you install, you are responsible for how it is used. This is a security focused plugin though we don't make any warranty or claim to how 'secure' it is. Use with caution and be smart, don't use it to store credit card information, social security numbers etc. The idea here was simply that it would be more secure than sending a password by email. That's it, the rest is up to you.
+Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl. Any page in your site can become a password sharing page by using the shortcode [share-a-password] - It's that simple.
 
 Share a Password was developed by FatLab, LLC (https://www.fatlabwebsupport.com/) and is maintained at GitHub (https://github.com/fatlabllc/fatlab-share-a-password-plugin). It's open source. If you can make it better or find a bug to squash, please do!
+
+Warranty: There is none. Just like any other software you install, you are responsible for how it is used. This is a security focused plugin though we don't make any warranty or claim to how 'secure' it is. Use with caution and be smart, don't use it to store credit card information, social security numbers etc. The idea here was simply that it would be more secure than sending a password by email. That's it, the rest is up to you.
 
 == Installation ==
 
@@ -29,7 +29,12 @@ Upload the Share a Password plugin to your website by using the administrative a
 
 == Changelog ==
 
-Current Version: 0.4 BETA
+Current Version: 1
+
+= 1 =
+* Updates to readme
+* Screenshots added
+* Test and moved to version 1 as first stable release
 
 = 0.4 BETA =
 * BIG Change: Moved encryption from outdated mcrypt to open-ssl - thanks to https://bhoover.com/using-php-openssl_encrypt-openssl_decrypt-encrypt-decrypt-data/
@@ -55,6 +60,12 @@ Current Version: 0.4 BETA
 * It was what it was... you gotta start somewhere, huh?
 
 == Upgrade Notice ==
+
+= 1 =
+* Updates to readme
+* Screenshots added
+* Tested and moved to version 1 as first stable release
+
 = 0.4 =
 * Changed encryption from outdated mcrypt to open-ssl
 * Interface improvements

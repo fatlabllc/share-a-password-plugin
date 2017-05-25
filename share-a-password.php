@@ -3,7 +3,7 @@
 Plugin Name: Share a Password
 Plugin URI: http://www.fatlabwebsupport.com/
 Description: Securly (as possible) share a password or other secret via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Add your secret and share the temporary URL with the recipient.
-Version: 0.4 BETA
+Version: 1
 Author: FatLab, LLC
 Author URI: http://www.fatlabwebsupport.com
 License: License: GPLv2 or later
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function sap_setup()
 {
 	// store plugin version in wp_options table
-	add_option( 'sap_version', '0.4', '', 'no' );
+	add_option( 'sap_version', '1', '', 'no' );
 	// create our main table
     global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";
