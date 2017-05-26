@@ -2,9 +2,9 @@
 Contributors: fatlabllc
 Donate link: N/A
 Tags: passwords, security
-Requires at least: 3.8.1
+Requires at least: 4.7
 Tested up to: 4.7.5
-Stable tag: 1
+Stable tag: 1.1
 License: GPLv2 or later
 
 Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours.
@@ -29,7 +29,11 @@ Upload the Share a Password plugin to your website by using the administrative a
 
 == Changelog ==
 
-Current Version: 1
+Current Version: 1.1
+
+= 1.1 =
+* Sanitized post input for security
+* Raised 'Requires at least' to 4.7 due to sanitize_textarea_field minimum version
 
 = 1 =
 * Updates to readme
