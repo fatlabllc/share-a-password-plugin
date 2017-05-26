@@ -13,7 +13,7 @@ Securely (as possible) share a password via temporary URL. Passwords are stored 
 
 Securely (as possible) share a password via temporary URL. Passwords are stored in an encrypted format and deleted after 24 hours. Each entry is encrypted with its own unique key using open-ssl. Any page in your site can become a password sharing page by using the shortcode [share-a-password] - It's that simple.
 
-Share a Password was developed by FatLab, LLC (https://www.fatlabwebsupport.com/) and is maintained at GitHub (https://github.com/fatlabllc/fatlab-share-a-password-plugin). It's open source. If you can make it better or find a bug to squash, please do!
+Share a Password was developed by FatLab, LLC (https://www.fatlabwebsupport.com/) and is maintained at GitHub (https://github.com/fatlabllc/share-a-password-plugin). It's open source. If you can make it better or find a bug to squash, please do!
 
 Warranty: There is none. Just like any other software you install, you are responsible for how it is used. This is a security focused plugin though we don't make any warranty or claim to how 'secure' it is. Use with caution and be smart, don't use it to store credit card information, social security numbers etc. The idea here was simply that it would be more secure than sending a password by email. That's it, the rest is up to you.
 
