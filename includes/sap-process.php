@@ -22,7 +22,8 @@
 	}
 
 	//get our form variable: unencrypted data provided by user
-	$userEntry = $_POST["sapInput"];
+	$userEntry = sanitize_textarea_field( $_POST['sapInput'] );
+
 	//create unique salt
 	$key = generatString(32);
 	//create url code
