@@ -1,35 +1,18 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	// generate a random string function
-	// this is called twice, once to generate the url and once to provide a unique salt
-    function generatString($stringLength)
-	{
-	   $listAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-	   return str_shuffle(
-	      substr(str_shuffle($listAlpha),0,$stringLength)
-	  );
-	}
-	//encrypt function
 
-	function encrypt($text,$key) {
-	    // Remove the base64 encoding from our key
-	    $encryption_key = base64_decode($key);
-	    // Generate an initialization vector
-	    $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
-	    // Encrypt the data using AES 256 encryption in CBC mode using our encryption key and initialization vector.
-	    $encrypted = openssl_encrypt($text, 'aes-256-cbc', $encryption_key, 0, $iv);
-	    return base64_encode($encrypted . '::' . $iv);
-	}
+	// reqiure the functions file, it's the brains of the operation
+	include_once dirname(dirname(__FILE__)) . '/functions.php';
 
 	//get our form variable: unencrypted data provided by user
 	$userEntry = sanitize_textarea_field( $_POST['sapInput'] );
 
 	//create unique salt
-	$key = generatString(32);
+	$key = share_ap_generateString(32);
 	//create url code
-	$urlcode = generatString(17);
+	$urlcode = share_ap_generateString(17);
 	//encrypt that sucker
-	$encrypt = encrypt($userEntry,$key);
+	$encrypt = share_ap_encrypt($userEntry,$key);
 	//put this in the database
 	global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";

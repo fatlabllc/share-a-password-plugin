@@ -1,6 +1,9 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+	// reqiure the functions file, it's the brains of the operation
+	include_once dirname(dirname(__FILE__)) . '/functions.php';
+
 	$urlVar = $_GET['q'];
 
 	// figure out the css path
@@ -8,15 +11,6 @@
 		$css='https://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
 	} else {
 	    $css='http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
-	}
-
-	//decrypt function
-	function decrypt($text,$key) {
-	    // Remove the base64 encoding from our key
-	    $encryption_key = base64_decode($key);
-	    // To decrypt, split the encrypted data from our IV - our unique separator used was "::"
-	    list($encrypted_data, $iv) = explode('::', base64_decode($text), 2);
-	    return openssl_decrypt($encrypted_data, 'aes-256-cbc', $encryption_key, 0, $iv);
 	}
 
 	//call information back from database
@@ -30,7 +24,7 @@
 	$viewCount = $result->views;
 	$viewCountNew = $viewCount+1;
 	// decrypt
-	$decrypt = decrypt($info3,$info2);
+	$decrypt = share_ap_decrypt($info3,$info2);
 	// add to the view count
 	$wpdb->update( $table_name, array( 'views' => $viewCountNew ), array( 'info1' => $urlVar ) );
 	// output CSS
