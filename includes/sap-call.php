@@ -34,7 +34,12 @@
 	// add to the view count
 	$wpdb->update( $table_name, array( 'views' => $viewCountNew ), array( 'info1' => $urlVar ) );
 	// output CSS
-	echo '<link rel="stylesheet" id="sap-css"  href="'.$css.'" />';
+	function fl_load_custom_wp_admin_style() {
+	        wp_register_style( 'fl_custom_wp_admin_css', get_template_directory_uri() . 'sap.css', false, '1.0.0' );
+	        wp_enqueue_style( 'fl_custom_wp_admin_css' );
+	}
+	add_action( 'admin_enqueue_scripts', 'fl_load_custom_wp_admin_style' );
+
 	// display the password
 	echo '<p><strong>Here is the information you seek:</strong></p><p class="secret">' . nl2br($decrypt) . '</p><p class="sap_count">This secret has been viewed '.$viewCountNew.' times</p>';
 ?>
