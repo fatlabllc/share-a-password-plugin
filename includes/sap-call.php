@@ -6,13 +6,6 @@
 
 	$urlVar = $_GET['q'];
 
-	// figure out the css path
-	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") {
-		$css='https://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
-	} else {
-	    $css='http://'.$_SERVER['HTTP_HOST'].'/wp-content/plugins/share-a-password/includes/sap.css';
-	}
-
 	//call information back from database
 	global $wpdb;
 	$table_name = $wpdb->prefix . "shareapassword";
@@ -27,12 +20,6 @@
 	$decrypt = share_ap_decrypt($info3,$info2);
 	// add to the view count
 	$wpdb->update( $table_name, array( 'views' => $viewCountNew ), array( 'info1' => $urlVar ) );
-	// output CSS
-	function fl_load_custom_wp_admin_style() {
-	        wp_register_style( 'fl_custom_wp_admin_css', get_template_directory_uri() . 'sap.css', false, '1.0.0' );
-	        wp_enqueue_style( 'fl_custom_wp_admin_css' );
-	}
-	add_action( 'admin_enqueue_scripts', 'fl_load_custom_wp_admin_style' );
 
 	// display the password
 	echo '<p><strong>Here is the information you seek:</strong></p><p class="secret">' . nl2br($decrypt) . '</p><p class="sap_count">This secret has been viewed '.$viewCountNew.' times</p>';

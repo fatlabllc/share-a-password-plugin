@@ -147,4 +147,11 @@ function share_ap_uninstall_plugin_cron() {
 }
 // remove options version
 delete_option( 'sap_version' );
-?>
+
+// enqueue styles
+function fatlab_sap_scripts() {
+	wp_enqueue_style( 'fatlab_sap_custom_css', plugin_dir_url( __FILE__ ) . '/includes/sap.css' );
+}
+add_action( 'wp_enqueue_scripts', 'fatlab_sap_scripts' );
+
+
